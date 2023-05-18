@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadoar de Notas</title>
+</head>
+<body>
+    <header>
+        <h1>Calculadora de notas</h1>
+    </header>
+    <main>
+        <div id="tudin">
+
+            <div class="calpond">
+                <h3>Ponderada</h3>
+                <br><br>
+
+                <label>Nome:</label>
+                <input type="text" id="nomizinho" required placeholder="Nome do indivíduo">
+                <br><br>
+        
+                <label>Nota 1:</label>
+                <input type="number" id="notinha" required placeholder="Nota 1">
+                <br><br>
+                <label>Peso 1:</label>
+                <input type="number" id="peso" required placeholder="Peso 1">
+                <br><br>
+        
+                <label>Nota 2:</label>
+                <input type="number" id="notinha1" required placeholder="Nota 2">
+                <br><br>
+                <label>Peso 2:</label>
+                <input type="number" id="peso1" required placeholder="Peso 2">
+                <br><br>
+        
+                <label>Nota 3:</label>
+                <input type="number" id="notinha2" required placeholder="Nota 3">
+                <br><br>
+                <label>Peso 3:</label>
+                <input type="number" id="peso2" required placeholder="Peso 3">
+                <br><br>
+        
+                <label>Nota 4:</label>
+                <input type="number" id="notinha3" required placeholder="Nota 4">
+                <br><br>
+                <label>Peso 4:</label>
+                <input type="number" id="peso3" required placeholder="Peso 4">
+                <br><br>
+        
+                <label>Nota 5:</label>
+                <input type="number" id="notinha4" required placeholder="Nota 5">
+                <br><br>
+                <label>Peso 5:</label>
+                <input type="number" id="peso4" required placeholder="Peso 5">
+                <br><br>
+        
+                <button id="pond">Calcular</button>
+                <div id="result"></div>
+            </div>
+
+            <div class="calaritme">
+                <h3>Aritmética</h3>
+                <br><br>
+
+                <label>Nome:</label>
+                <input type="text" id="nomedomeliante" required placeholder="Nome do indivíduo">
+                <br><br>
+        
+                <label>Nota 1:</label>
+                <input type="number" id="nota1" required placeholder="Nota 1">
+                <br><br>
+        
+                <label>Nota 2:</label>
+                <input type="number" id="nota2" required placeholder="Nota 2">
+                <br><br>
+        
+                <label>Nota 3:</label>
+                <input type="number" id="nota3" required placeholder="Nota 3">
+                <br><br>
+        
+                <label>Nota 4:</label>
+                <input type="number" id="nota4" required placeholder="Nota 4">
+                <br><br>
+        
+                <label>Nota 5:</label>
+                <input type="number" id="nota5" required placeholder="Nota 5">
+                <br><br><br>
+        
+                <button id="arit">Calcular</button>
+                <div id="resultado"></div>
+            </div>
+        
+            
+    
+        </div>
+    </main>
+    <script>
+        //aritmética
+        var conta = document.getElementById("arit");
+        conta.addEventListener("click", function() {
+            var nota1 = parseFloat(document.getElementById("nota1").value);
+            var nota2 = parseFloat(document.getElementById("nota2").value);
+            var nota3 = parseFloat(document.getElementById("nota3").value);
+            var nota4 = parseFloat(document.getElementById("nota4").value);
+            var nota5 = parseFloat(document.getElementById("nota5").value);
+            var resultado = document.getElementById("resultado");
+    
+            var soma = nota1 + nota2 + nota3 + nota4 + nota5;
+            var media = soma / 5;
+    
+            if (media >= 7) {
+                resultado.innerHTML = "A média aritmética é " + media + ". Está aprovado";
+            } else if (media >= 5) {
+                resultado.innerHTML = "A média aritmética é " + media + ". Terá que fazer exame";
+            } else if (media <= 4.9) {
+                resultado.innerHTML = "A média aritmética é " + media + ". Foi reprovado";
+            }
+        });
+    
+        //ponderada
+        var continha = document.getElementById("pond");
+        continha.addEventListener("click", function() {
+            var notinha = parseFloat(document.getElementById("notinha").value);
+            var peso = parseFloat(document.getElementById("peso").value);
+            var notinha1 = parseFloat(document.getElementById("notinha1").value);
+            var peso1 = parseFloat(document.getElementById("peso1").value);
+            var notinha2 = parseFloat(document.getElementById("notinha2").value);
+            var peso2 = parseFloat(document.getElementById("peso2").value);
+            var notinha3 = parseFloat(document.getElementById("notinha3").value);
+            var peso3 = parseFloat(document.getElementById("peso3").value);
+            var notinha4 = parseFloat(document.getElementById("notinha4").value);
+            var peso4 = parseFloat(document.getElementById("peso4").value);
+            var result = document.getElementById("result");
+    
+            var somapond = notinha * peso + notinha1 * peso1 + notinha2 * peso2 + notinha3 * peso3 + notinha4 * peso4;
+            var otrasoma = peso + peso1 + peso2 + peso3 + peso4;
+            var mediapond = somapond / otrasoma;
+    
+            if (mediapond >= 7) {
+                result.innerHTML = "A média ponderada é " + mediapond + ". Está aprovado";
+            } else if (mediapond >= 5) {
+                result.innerHTML = "A média ponderada é " + mediapond + ". Terá que fazer exame";
+            } else if (mediapond <= 4.9) {
+                result.innerHTML = "A média ponderada é " + mediapond + ". Foi reprovado";
+            }
+        });
+    </script>
+    
+</body>
+</html>
+
+
+
+

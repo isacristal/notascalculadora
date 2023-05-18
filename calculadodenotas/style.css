@@ -1,0 +1,61 @@
+:root{
+    --cor--principal:#84A9AC;
+    --cor--secundaria: #E7DFD5;
+    --cor--letra: #204051;
+
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: var(--cor--principal);
+}
+h1{
+    text-align: center;
+    color: #204051;
+}
+#tudin{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 50px;
+    margin: 40px;
+}
+.calaritme{
+    border: 6px double var(--cor--letra);
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
+}
+.calaritme input{
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+.calaritme button{
+    background-color: #204051;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    color: var(--cor--secundaria);
+}
+.calpond{
+    border: 6px double var(--cor--letra);
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+.calpond input{
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    
+}
+.calpond button{
+    background-color: #204051;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    color: var(--cor--secundaria); 
+}
